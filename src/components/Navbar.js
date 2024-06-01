@@ -1,43 +1,79 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
   return (
-    <Nav>
-      <NavLink to='/'>Main Page</NavLink>
-      <NavLink to='/destinations'>Destinations</NavLink>
-      <NavLink to='/map'>Map</NavLink>
-      <NavLink to='/gallery'>Gallery</NavLink>
-      <NavLink to='/contact'>Contact</NavLink>
-      <NavLink to='/about'>About Me</NavLink>
-      <SearchBar type="text" placeholder="Search" />
-    </Nav>
+    <NavContainer>
+      <NavLinks>
+        <NavItem>
+          <StyledLink to="/">Home</StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/destinations">Destinations</StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/map">Map</StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/gallery">Gallery</StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/contact">Contact</StyledLink>
+        </NavItem>
+        <NavItem>
+          <StyledLink to="/about">About Me</StyledLink>
+        </NavItem>
+      </NavLinks>
+      <SearchBarContainer>
+        <SearchBar onSearch={onSearch} />
+      </SearchBarContainer>
+    </NavContainer>
   );
 };
 
 export default Navbar;
 
-const Nav = styled.nav`
-  background: #fffff;
-  height: 60px;
+const NavContainer = styled.div`
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin-top: 5px;
+  background-color: #ffffff;
+  font-family: 'Chivo', sans-serif;
 `;
 
-const NavLink = styled(Link)`
+
+const NavLinks = styled.ul`
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+`;
+
+const NavItem = styled.li`
+  margin: 0 15px;
+`;
+
+const StyledLink = styled(Link)`
   color: #000000;
   text-decoration: none;
   font-size: 18px;
-  font-family: Chivo;
 
   &:hover {
-    color: #FFBE98
+    color: #FFBE98;
   }
 `;
 
-const SearchBar = styled.input`
-  padding: 5px;
-  font-size: 16px;
+const SearchBarContainer = styled.div`
+  
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  
 `;
