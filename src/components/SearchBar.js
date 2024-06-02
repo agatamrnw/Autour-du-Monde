@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import searchIcon from '../images/search.png'; 
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = ({ onSearch, onFocus, onBlur }) => {
   const [query, setQuery] = useState('');
 
   const handleInputChange = (e) => {
-    const value = e.target.value;
-    setQuery(value);
-    onSearch(value);
+    setQuery(e.target.value);
+    onSearch(e.target.value);
   };
 
   return (
@@ -20,6 +19,8 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search"
           value={query}
           onChange={handleInputChange}
+          onFocus={onFocus}
+          onBlur={onBlur}
         />
         
       </SearchWrapper>
@@ -37,12 +38,12 @@ const SearchBarContainer = styled.div`
 const SearchWrapper = styled.div`
   position: relative;
   display: inline-block;
-  width: 60%;
+  width: 100%;
 `;
 
 const SearchInput = styled.input`
   width: 100%;
-  padding: 10px 10px 10px 40px; /* Added padding-right for icon */
+  padding: 10px 10px 10px 40px; 
   font-size: 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -54,6 +55,6 @@ const SearchIcon = styled.img`
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
-  width: 20px; /* Adjust size based on your icon */
-  height: 20px; /* Adjust size based on your icon */
+  width: 20px;
+  height: 20px;
 `;

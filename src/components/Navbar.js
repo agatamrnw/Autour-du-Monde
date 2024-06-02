@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 
-const Navbar = ({ onSearch }) => {
+const Navbar = ({ onSearch, onFocus, onBlur }) => {
   return (
     <NavContainer>
       <NavLinks>
@@ -27,7 +27,7 @@ const Navbar = ({ onSearch }) => {
         </NavItem>
       </NavLinks>
       <SearchBarContainer>
-        <SearchBar onSearch={onSearch} />
+        <SearchBar onSearch={onSearch} onFocus={onFocus} onBlur={onBlur} />
       </SearchBarContainer>
     </NavContainer>
   );
@@ -39,7 +39,7 @@ const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: 0px 20px;
   margin-top: 5px;
   background-color: #ffffff;
   font-family: 'Chivo', sans-serif;

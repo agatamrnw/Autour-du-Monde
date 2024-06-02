@@ -4,41 +4,52 @@ import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Footer from './components/Footer';
-import DestinationPage from './pages/DestinationPage';
+import DestinationsPage from './pages/DestinationsPage';
 import BlogPage from './pages/BlogPage';
-import SearchResults from './components/SearchResults';
+import SideMenu from './components/SideMenu';
 
 const App = () => {
+  const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [menuVisible, setMenuVisible] = useState(false);
 
-  const data = [
-    { type: 'destination', name: 'Paris', description: 'The city of light.' },
-    { type: 'destination', name: 'Tokyo', description: 'A bustling metropolis.' },
-    { type: 'blog', name: '10 Best Places to Visit in Paris', description: 'Discover the top attractions in Paris.' },
-    { type: 'blog', name: 'Exploring Tokyo', description: 'A guide to the best places in Tokyo.' },
-    // Add more data as needed
+
+  const destinations = [
+    { id: 1, name: 'Mallorca, Spain' },
+    { id: 2, name: 'Alpes, Switzerland' },
+    { id: 3, name: 'Oslo, Norway'}
   ];
 
   const handleSearch = (query) => {
-    if (!query) {
-      setSearchResults([]);
-      return;
-    }
+    setSearchQuery(query);
 
-    const results = data.filter(item => item.name.toLowerCase().includes(query.toLowerCase()));
-    setSearchResults(results);
+    if (query.length > 0) {
+      const results = destinations.filter(destination =>
+        destination.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(results);
+    } else {
+      setSearchResults([]);
+    }
+  };
+  const handleFocus = () => {
+    setMenuVisible(true);
   };
 
+  const handleBlur = () => {
+    setTimeout(() => {
+      setMenuVisible(false);
+    }, 200);
+  };
   return (
     <Router>
       <Header />
-      <Navbar onSearch={handleSearch} />
+      <Navbar onSearch={handleSearch} onFocus={handleFocus} onBlur={handleBlur} />
+      <SideMenu results={searchResults} visible={menuVisible} />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/destinations/:destinationId' element={<DestinationPage />} />
-        <Route path='/blog' element={<BlogPage />} />
-        <Route path='/search' element={<SearchResults results={searchResults} />} />
-        {/* Add other routes here */}
+        <Route path="/" element={<Home />} />
+        <Route path="/destinations" element={<DestinationsPage searchQuery={searchQuery} />} />
+        <Route path="/blog" element={<BlogPage />} />
       </Routes>
       <Footer />
     </Router>
