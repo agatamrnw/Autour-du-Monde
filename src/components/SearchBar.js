@@ -48,6 +48,11 @@ const SearchInput = styled.input`
   border: 1px solid #ddd;
   border-radius: 4px;
   box-sizing: border-box;
+  &:focus{
+    outline-style: solid;
+    outline-color:#C6C09C;
+   
+  }
 `;
 
 const SearchIcon = styled.img`

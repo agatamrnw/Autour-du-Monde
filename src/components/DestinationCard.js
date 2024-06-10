@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const DestinationCard = ({ destination }) => {
   return (
     <CardContainer>
       <Content>
-        <Title>{destination.name}</Title>
+      <Image src={destination.image} />
+      <Info>
+      <Title>{destination.name}</Title>
         <Date>{destination.date}</Date>
-        <Image src={destination.image} />
+        
         <Description>{destination.description}</Description>
+      </Info>
+        
       </Content>
     </CardContainer>
   );
@@ -16,29 +21,40 @@ const DestinationCard = ({ destination }) => {
 
 export default DestinationCard;
 
+const Info = styled.div`
+display:flex;
+flex-direction: column;
+margin: 16px;
+`;
+
 const CardContainer = styled.div`
+  max-width: 960px;
   display: flex;
   flex-direction: column;
   margin: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   overflow: hidden;
-  background-color: #fff;
+  background-color: #ffffff;
+  font-family:'Chivo';
+  cursor: pointer;
+  &:hover{
+    box-shadow: 0 2px 4px rgba(255, 190, 152, 0.8);
+  }
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: auto;
+  max-width: 320px;
 `;
 
 const Content = styled.div`
   padding: 20px;
+  display: flex;
 `;
 
 const Title = styled.h2`
   margin: 0;
   font-size: 24px;
   color: #333;
+  font-weight: 300;
 `;
 
 const Date = styled.p`

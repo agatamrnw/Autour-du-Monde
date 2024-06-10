@@ -1,34 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import mallorca from '../images/mallorca.png';
+import alpes from '../images/alpes.png';
+import oslo from '../images/oslo.png';
+import { useNavigate } from 'react-router-dom';
 
+
+  
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const goToDestination = () => {
+    navigate('/destinations');  // Change the path to your specific destination
+  };
   return (
     <HeroContainer>
       <HeroContent>
-        <Destination>
+        <Destination className='item1'>
           
           <DestinationName>Mallorca, Spain</DestinationName>
           <DestinationDate>1.04.2024 - 14.04.2024</DestinationDate>
-          <DestinationImage src='../images/mallorca.png'/>
+          <DestinationImage src={mallorca}/>
           <DestinationDescription>
-            Sun-soaked shores, azure seas, vibrant markets, culture-rich streets, culinary delights.
+            Sun-soaked shores, azure seas, vibrant markets, culture-rich streets, <br/>culinary delights.<a> Read more..</a>
           </DestinationDescription>
         </Destination>
-        <Destination>
-          <DestinationDate>6.06.2023 - 12.06.2023</DestinationDate>
+        <Destination className='item2'>
+          
           <DestinationName>Alpes, Switzerland</DestinationName>
-          <DestinationImage src='../images/alpes.png'/>
+          <DestinationDate>6.06.2023 - 12.06.2023</DestinationDate>
+          <DestinationImage src={alpes}/>
           <DestinationDescription>
-            The majestic Alps welcomed me with open arms, towering peaks adorned with snow. Skiing down pristine slopes, cozy evenings in rustic chalets, and breathtaking vistas from mountain peaks painted unforgettable memories.
+            The majestic Alps welcomed me with open arms,<br/>towering peaks adorned with snow. Skiing down<br/> pristine slopes, cozy evenings in rustic chalets, <br/>and breathtaking vistas from mountain peaks painted <br/>unforgettable memories.<a> Read more..</a>
           </DestinationDescription>
         </Destination>
-        <Destination>
+        <Destination className='item3'>
           <DestinationName>Oslo, Norway</DestinationName>
-          <DestinationImage src='../images/oslo.png'/>
+          <DestinationDate>6.12.2023 - 12.12.2023</DestinationDate>
+          <DestinationImage src={oslo}/>
           <DestinationDescription>
-            In December, Oslo is a magical winter destination. I strolled through snowy streets adorned with twinkling lights, indulging in local treats like kanelboller and smørbrød. Iconic landmarks like the Oslo Opera House and Akershus Fortress added to the city's charm.
+            In December, Oslo is a magical winter destination. I strolled through <br/>snowy streets adorned with twinkling lights, indulging in local treats <br/>like kanelboller and smørbrød. Iconic landmarks like the Oslo Opera House <br/>and Akershus Fortress added to the city's charm.<a> Read more..</a>
           </DestinationDescription>
         </Destination>
+        <Button onClick={goToDestination}>EXPLORE</Button>
       </HeroContent>
     </HeroContainer>
   );
@@ -37,40 +50,107 @@ const HeroSection = () => {
 export default HeroSection;
 
 const DestinationImage = styled.img`
-  width: 100%;
+  width: 100%; 
+  height: auto;
+  
 `;
 const HeroContainer = styled.div`
   background: #ffffff;
-  padding: 20px;
+  width:fit-content;
+  margin:auto;
+  display:flex;
+  justify-content: center;
+  margin-bottom: 80px;
+  
+
 `;
 
 const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  
+  
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  
 `;
 
 const Destination = styled.div`
   background: #fff;
-  margin: 10px;
-  padding: 20px;
-  width: 300px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  
+  &.item1 {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    width:480px;
+   
+  }
+
+  &.item2 {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 2;
+    width:280px;
+    margin-top: 80px;
+  }
+
+  &.item3 {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 2;
+    width:480px;
+    
+    
+  }
+  a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #C6C09C;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
 `;
 
+const Button = styled.div`
+cursor: pointer;
+background: #000000;
+max-width:380px;
+color: #ffffff;
+padding-top: 20px;
+padding-bottom: 20px;
+margin-bottom: 16px;
+
+font-size: 20px;
+font-family: 'Chivo';
+text-align: center;
+font-weight: 200;
+grid-column: 2/span 1;
+    grid-row: 3/span 1;
+&:hover{
+  background: #FFBE98;
+  transition: 0.3s ease-out;
+}
+`;
 const DestinationDate = styled.p`
   font-size: 14px;
   color: #888;
+  font-family: 'Chivo';
+  font-weight: 200;
 `;
 
 const DestinationName = styled.h2`
   font-size: 24px;
-  margin: 10px 0;
+  margin: 4px 0;
+  font-family: 'Chivo';
+  font-weight: 200;
 `;
 
 const DestinationDescription = styled.p`
   font-size: 16px;
   color: #555;
+  font-family: 'Open Sans';
+  font-weight: 400;
 `;

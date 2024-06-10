@@ -78,17 +78,3 @@ const SpinO = styled.span`
   }
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  gap: 20px;
-`;
-
-const NavLink = styled(Link)`
-  text-decoration: none;
-  font-size: 16px;
-  color: #333;
-
-  &:hover {
-    color: #007BFF;
-  }
-`;

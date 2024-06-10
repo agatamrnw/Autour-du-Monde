@@ -7,6 +7,9 @@ import Footer from './components/Footer';
 import DestinationsPage from './pages/DestinationsPage';
 import BlogPage from './pages/BlogPage';
 import SideMenu from './components/SideMenu';
+import Contact from './pages/Contact';
+import AboutMe from './pages/AboutMe';
+
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -43,6 +46,7 @@ const App = () => {
   };
   return (
     <Router>
+   
       <Header />
       <Navbar onSearch={handleSearch} onFocus={handleFocus} onBlur={handleBlur} />
       <SideMenu results={searchResults} visible={menuVisible} />
@@ -50,6 +54,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/destinations" element={<DestinationsPage searchQuery={searchQuery} />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/aboutme" element={<AboutMe />} />
       </Routes>
       <Footer />
     </Router>

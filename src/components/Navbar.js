@@ -14,16 +14,13 @@ const Navbar = ({ onSearch, onFocus, onBlur }) => {
           <StyledLink to="/destinations">Destinations</StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink to="/map">Map</StyledLink>
-        </NavItem>
-        <NavItem>
-          <StyledLink to="/gallery">Gallery</StyledLink>
+          <StyledLink to="/blog">Blog Posts</StyledLink>
         </NavItem>
         <NavItem>
           <StyledLink to="/contact">Contact</StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink to="/about">About Me</StyledLink>
+          <StyledLink to="/aboutme">About Me</StyledLink>
         </NavItem>
       </NavLinks>
       <SearchBarContainer>
@@ -39,7 +36,7 @@ const NavContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 20px;
+  padding: 0px 160px;
   margin-top: 5px;
   background-color: #ffffff;
   font-family: 'Chivo', sans-serif;

@@ -30,12 +30,12 @@ export default SideMenu;
 
 const SideMenuContainer = styled.div`
   position: absolute;
-  top: 160px;
-  right:30px;
+  top: 150px;
+  right:160px;
   width: 140px;
-  height: content-height;
+  height: fit-content;
   background-color: #ffffff;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 0  5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
   padding: 32px;
   z-index: 1000;
