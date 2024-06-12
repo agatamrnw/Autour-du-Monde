@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import mallorca from '../images/mallorca.png';
+import mallorca from '../images/mallorca.jpg';
 import alpes from '../images/alpes.png';
 import oslo from '../images/oslo.png';
 import { useNavigate } from 'react-router-dom';
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 const HeroSection = () => {
   const navigate = useNavigate();
   const goToDestination = () => {
-    navigate('/destinations');  // Change the path to your specific destination
+    navigate('/destinations'); 
   };
   return (
     <HeroContainer>
@@ -18,27 +18,27 @@ const HeroSection = () => {
         <Destination className='item1'>
           
           <DestinationName>Mallorca, Spain</DestinationName>
-          <DestinationDate>1.04.2024 - 14.04.2024</DestinationDate>
+          <DestinationDate>1.04.2024 - 4.04.2024</DestinationDate>
           <DestinationImage src={mallorca}/>
           <DestinationDescription>
-            Sun-soaked shores, azure seas, vibrant markets, culture-rich streets, <br/>culinary delights.<a> Read more..</a>
+            Sun-soaked shores, azure seas, vibrant markets, culture-rich streets, <br/>culinary delights.<a href='/mallorca'> Read more..</a>
           </DestinationDescription>
         </Destination>
         <Destination className='item2'>
           
           <DestinationName>Alpes, Switzerland</DestinationName>
-          <DestinationDate>6.06.2023 - 12.06.2023</DestinationDate>
+          <DestinationDate>6.06.2023 - 9.06.2023</DestinationDate>
           <DestinationImage src={alpes}/>
           <DestinationDescription>
-            The majestic Alps welcomed me with open arms,<br/>towering peaks adorned with snow. Skiing down<br/> pristine slopes, cozy evenings in rustic chalets, <br/>and breathtaking vistas from mountain peaks painted <br/>unforgettable memories.<a> Read more..</a>
+            The majestic Alps welcomed me with open arms,<br/>towering peaks adorned with snow. Skiing down<br/> pristine slopes, cozy evenings in rustic chalets, <br/>and breathtaking vistas from mountain peaks painted <br/>unforgettable memories.<a href='/alpes'> Read more..</a>
           </DestinationDescription>
         </Destination>
         <Destination className='item3'>
           <DestinationName>Oslo, Norway</DestinationName>
-          <DestinationDate>6.12.2023 - 12.12.2023</DestinationDate>
+          <DestinationDate>1.12.2023 - 4.12.2023</DestinationDate>
           <DestinationImage src={oslo}/>
           <DestinationDescription>
-            In December, Oslo is a magical winter destination. I strolled through <br/>snowy streets adorned with twinkling lights, indulging in local treats <br/>like kanelboller and smørbrød. Iconic landmarks like the Oslo Opera House <br/>and Akershus Fortress added to the city's charm.<a> Read more..</a>
+            In December, Oslo is a magical winter destination. I strolled through <br/>snowy streets adorned with twinkling lights, indulging in local treats <br/>like kanelboller and smørbrød. Iconic landmarks like the Oslo Opera House <br/>and Akershus Fortress added to the city's charm.<a href='/oslo'> Read more..</a>
           </DestinationDescription>
         </Destination>
         <Button onClick={goToDestination}>EXPLORE</Button>

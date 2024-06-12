@@ -13,7 +13,7 @@ const SideMenu = ({ results, visible }) => {
       {results.length > 0 ? (
         results.map((result, index) => (
           <MenuItem key={index}>
-            <StyledLink to={`/destinations/${result.id}`}>
+            <StyledLink to={`/${result.id}`}>
               {result.name}
             </StyledLink>
             <hr color='#f4f4f4'></hr>

@@ -16,17 +16,13 @@ const Footer = () => {
       <FooterWrap>
         <FooterLinkTitle>About Us</FooterLinkTitle>
         <FooterLink to='/'>How it works</FooterLink>
-        <FooterLink to='/'>Testimonials</FooterLink>
         <FooterLink to='/'>Careers</FooterLink>
-        <FooterLink to='/'>Investors</FooterLink>
-        <FooterLink to='/'>Terms of Service</FooterLink>
       </FooterWrap>
       <FooterWrap>
         <FooterLinkTitle>Contact Us</FooterLinkTitle>
         <FooterLink to='/'>Contact</FooterLink>
         <FooterLink to='/'>Support</FooterLink>
-        <FooterLink to='/'>Destinations</FooterLink>
-        <FooterLink to='/'>Sponsorships</FooterLink>
+        
       </FooterWrap>
     </FooterContainer>
   );
@@ -95,7 +91,7 @@ const FooterLink = styled(Link)`
   cursor: pointer;
 
   &:hover {
-    text-decoration: underline;
+    color: #FFBE98;
     transition: 0.3s ease-out;
   }
 `;

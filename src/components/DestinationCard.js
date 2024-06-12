@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { useNavigate } from 'react-router-dom';
 
 const DestinationCard = ({ destination }) => {
+  const navigate = useNavigate();
+  const goToDestination = () => {
+    const path ='/'+destination.id
+    navigate(path); 
+  };
   return (
-    <CardContainer>
+    <CardContainer onClick={goToDestination}>
       <Content>
       <Image src={destination.image} />
       <Info>
