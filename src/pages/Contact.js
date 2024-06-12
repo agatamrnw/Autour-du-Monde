@@ -61,8 +61,8 @@ padding: 24px;
 `;
 
 const Image = styled.img`
-width: 50%;
-height: auto;
+width: 80%;
+
 `;
 
 const ContactContent = styled.div`

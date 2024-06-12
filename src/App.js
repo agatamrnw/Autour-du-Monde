@@ -15,6 +15,7 @@ import destinations from './components/Destinations';
 import Oslo from './pages/Oslo';
 import Bucket from './pages/Bucket';
 import Solo from './pages/Solo';
+import Budget from './pages/Budget';
 
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -62,6 +63,7 @@ const App = () => {
         <Route path="/oslo" element={<Oslo />} />
         <Route path="/bucket-list" element={<Bucket />} />
         <Route path="/solo-trips" element={<Solo />} />
+        <Route path="/budget-tips" element={<Budget />} />
       </Routes>
       <Footer />
     </Router>

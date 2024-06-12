@@ -41,6 +41,10 @@ const Solo = () =>{
             <h2>Amsterdam, Netherlands</h2>
             <p>Amsterdam is renowned for its friendly locals, picturesque canals, and rich cultural heritage. As a solo traveler, you can explore the city's world-class museums, enjoy a leisurely bike ride, and relax in cozy cafes. The city's compact size and excellent public transportation make it easy to get around on your own.</p>
             </li>
+            <li>
+            <h2>Copenhagen, Denmark</h2>
+            <p>Copenhagen is a delightful destination for solo travelers, known for its bike-friendly streets, stylish design, and hygge (coziness) culture. Visit the colorful Nyhavn harbor, explore the historic Tivoli Gardens, and enjoy the city's culinary scene. Copenhagen's friendly atmosphere and safe environment make it an ideal solo travel spot.</p>
+            </li>
           </ul>
           
         </Section>

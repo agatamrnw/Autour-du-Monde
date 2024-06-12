@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import mallorca from '../images/mallorca.jpg';
 import alpes from '../images/alpes.png';
-import oslo from '../images/oslo.png';
+import oslo from '../images/oslo.jpg';
 import { useNavigate } from 'react-router-dom';
 
 
